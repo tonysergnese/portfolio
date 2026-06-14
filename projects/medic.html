@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthony Sergnese | Portfolio</title>
+  <link rel="stylesheet" href="../style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+   
+<body id="top">    
+
+  <header>
+    <div class="container">
+      <h1>
+        <a href="../index.html#top">Anthony Sergnese</a>
+      </h1>
+      <div class="icons">
+        <a href="https://www.linkedin.com/in/anthony-sergnese" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:anthony.sergnese@mail.utoronto.ca" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+    <section class="project-hero">
+        <div class="container hero-grid">
+            <img class="hero-img" src="../images/meddevs2.png" alt="SPLASH capsule close-up">
+
+            <div class="hero-text">
+            <h2 class="hero-title">MEDIC</h2>
+            <p class="hero-subtitle">
+            <em>
+                <a href="https://www.l4te.org/research/" target="_blank" rel="noopener">
+                Lab for Translational Engineering</a>, 2024–2025
+            </em>
+            </p>
+            <p>
+                From June 2024 to July 2025, I led the development of an ingestible two-capsule system for the closed-loop detection and treatment of upper gastrointestinal bleeding (UGIB). 
+                Patients at risk of UGIB would ingest both robotic capsules, initiating a four-week monitoring period. 
+                The first capsule (Capsule 1) continuously senses the gastric environment, while the second (Capsule 2) delivers tranexamic acid (TXA) upon confirmed detection of bleeding.
+            </p>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- divider -->
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <section class="project-gallery">
+        <div class="container gallery-grid">
+
+            <!-- Square/landscape block (16:9) -->
+            <figure class="gallery-item">
+            <div class="media-wrapper-landscape2">
+            <img src="../images/sense explode.png" alt="PCB prototype">
+            </div>
+            <figcaption class="caption">Capsule 1 Exploded View</figcaption>
+            </figure>
+
+            <!-- Portrait block (3:4) -->
+            <figure class="gallery-item">
+            <div class="media-wrapper-landscape2">
+            <img src="../images/delivexplode.png" alt="Vertical view">
+            </div>
+            <figcaption class="caption">Capsule 2 Exploded View</figcaption>
+            </figure>
+
+        </div>
+    </section>
+
+    <!-- paragraph 1 -->
+    <div class="container">
+        <p>
+        Capsule 1 employs optical spectroscopy to detect bleeding, using three LED–phototransistor pairs to emit light and measure reflected light intensity. 
+        Pilot <em>in vivo</em> studies demonstrated that the presence of blood produces a measurable decrease in reflected light, providing a reliable biomarker for detection. 
+        To process data and communicate results, I designed a custom CC1310 microcontroller PCB to interface with preexisting, lab-designed sensing and antenna PCBs. 
+        Since Capsule 2 could not accommodate RF hardware, I implemented an optical scheme for inter-device communication: Capsule 1 emits pulsed light signals upon detecting blood, which Capsule 2 registers to trigger its release sequence.
+        </p>
+    </div>
+
+    <!-- image/vid gallery -->
+    <section class="project-gallery">
+        <div class="container gallery-grid">
+
+        <!-- Image entry -->
+        <figure class="gallery-item">
+        <div class="media-wrapper-landscape">
+            <img src="../images/mcuss.png" alt="Rigid-flex PCB close-up">
+        </div>
+        <figcaption class="caption">MCU PCB</figcaption>
+        </figure>
+
+        <!-- Video entry -->
+        <figure class="gallery-item">
+        <div class="media-wrapper-landscape2">
+            <video autoplay muted loop playsinline>
+            <source src="../images/delivery.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+        </div>
+        <figcaption class="caption">TXA Delivery Demo</figcaption>
+        </figure>
+
+        </div>
+    </section>
+
+    <div class="container">
+        <p>
+        To enable treatment, I manufactured custom TXA pellets in-house using resin molds and clamps, formulating them with MCC and gelatin to achieve a 90% yield and good structural integrity. 
+        In Capsule 2, I engineered a spring-loaded plunger system constrained by a stainless steel foil seal and designed a silver–silver chloride electrode trigger that electrochemically dissolves the seal to release the drug. 
+        For safe gastric residence, I developed superelastic nitinol arms that deploy in the stomach yet remain enclosed in dissolvable gelatin capsules for safe swallowing, and I implemented an electrochemical disassembly mechanism that allows the arms to detach after treatment. 
+        On the firmware side, I wrote custom C algorithms that established dynamic sensing thresholds, managed inter-device RF and optical communication, and synchronized triggering between capsules. 
+        Finally, I executed <em>in vivo</em> studies to validate pharmacokinetics of the custom TXA tablets and to demonstrate closed-loop function, showing that the system could autonomously detect bleeding, communicate, and deliver therapy.
+        </p>
+    </div>
+
+    <div class="container">
+        <p>
+            <br><strong>Citation:</strong><br>
+            Chen, J.<sup>†</sup>, <strong>Sergnese, A.</strong><sup>†</sup>, et al., 
+            Traverso, G.<sup>*</sup> 
+            "An Ingestible Platform for the Closed-Loop Diagnosis and Treatment of Gastric Bleeding." 
+             (manuscript under review).<br>
+            <span style="font-size:0.9em; color:#555;">
+                <sup>†</sup>equal contribution;&nbsp;<sup>*</sup>corresponding author
+            </span>
+        </p>
+    </div>
+
+    <!-- footer -->
+    <nav class="proj-pager" aria-label="Project navigation">
+        <a class="pager-btn prev" href="pmrl.html" aria-label="Previous project">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        </a>
+
+        <a class="pager-btn home" href="../index.html#projects" aria-label="Back to projects">
+        <i class="fas fa-house" aria-hidden="true"></i>
+        </a>
+
+        <a class="pager-btn next" href="aurora.html" aria-label="Next project">
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </nav>

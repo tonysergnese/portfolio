@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthony Sergnese | Portfolio</title>
+  <link rel="stylesheet" href="../style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+   
+<body id="top">    
+
+  <header>
+    <div class="container">
+      <h1>
+        <a href="../index.html#top">Anthony Sergnese</a>
+      </h1>
+      <div class="icons">
+        <a href="https://www.linkedin.com/in/anthony-sergnese" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:anthony.sergnese@mail.utoronto.ca" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+    <section class="project-hero">
+        <div class="container hero-grid">
+            <img class="hero-img" src="../images/theia.png" alt="SPLASH capsule close-up">
+
+            <div class="hero-text">
+            <h2 class="hero-title">FIREFLI</h2>
+            <p class="hero-subtitle">
+            <em>
+                <a href="https://www.l4te.org/research/" target="_blank" rel="noopener">
+                Lab for Translational Engineering</a>, 2024–2025
+            </em>
+            </p>
+            <p>
+                FIREFLI is an ingestible, pill-sized device designed to activate in the small intestine and diagnose mesenteric ischemia. 
+                When I joined the project, baseline sensing and MCU circuitry had been established, however the system faced critical challenges. 
+                The MCU PCB was unable to communicate with the sensor PCB due to unreliable I²C lines, and no passive trigger mechanism existed to ensure the device powered on only in the small intestine. 
+                Reliable electronics and a targeted power switch were essential both for conserving battery life over the full intestinal transit time and for ensuring diagnostic accuracy.
+            </p>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- divider -->
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+   
+
+    <!-- paragraph 1 -->
+    <div class="container">
+        <p>
+        To address these issues, I first debugged the electronics system with an oscilloscope and logic analyzer, identifying a logic-level mismatch (2.1 V output vs. 1.8 V required) as the root cause of failed communication. 
+        I designed an intermediate level-shifting PCB using Altium Designer to slot between the sensing and MCU boards, which restored full function. 
+        In parallel, I developed a passive, pH-activated trigger by coating copper electrodes with Eudragit L100-55, a polymer that dissolves only in neutral intestinal fluid. 
+        This mechanism prevented premature activation in the stomach while reliably powering the device in the small intestine. 
+        With these solutions, I assembled four test devices that completed nine successful <em>in vivo</em> trials. 
+        Using pilot trial data, I also wrote algorithms to average healthy versus ischemic signals and set diagnostic thresholds, achieving 90% diagnostic accuracy with 98% sensitivity and 85% specificity.
+        In addition to the engineering and experimental work, I contributed significantly to the dissemination of this research. 
+        I constructed the methods section of a manuscript describing FIREFLI’s design, validation, and <em>in vivo</em> testing. 
+        The manuscript was accepted by <em>Science Robotics</em> and will be published in Fall 2025.
+        </p>
+    </div>
+
+     <section class="project-gallery">
+        <div class="container gallery-grid">
+
+        <!-- Square/landscape block (16:9) -->
+        <figure class="gallery-item">
+            <div class="media-wrapper-landscape">
+            <img src="../images/bb.png" alt="PCB prototype">
+            </div>
+            <figcaption class="caption">Breadboarded Level-Shifter Circuit</figcaption>
+        </figure>
+
+        <!-- Portrait block (3:4) -->
+        <figure class="gallery-item">
+            <div class="media-wrapper-landscape">
+            <img src="../images/eu.png" alt="Vertical view">
+            </div>
+            <figcaption class="caption">pH Activation Mechanism</figcaption>
+        </figure>
+
+        </div>
+    </section>
+
+    <section class="project-media">
+        <div class="gallery-item">
+            <div class="media-wrapper-center">
+            <img src="../images/lvl.png" alt="FIREFLI capsule prototype">
+            </div>
+            <figcaption class="caption">Level-Shifter PCB</figcaption>
+        </div>
+    </section>
+
+    <div class="container">
+        <p>
+            <br><strong>Citation:</strong><br>
+            Chen, J.<sup>†</sup>, Alexiev, A.<sup>†</sup>, <strong>Sergnese, A.</strong><sup>†</sup>, et al., 
+            Traverso, G.<sup>*</sup> 
+            "An Ingestible Capsule for Luminance-Based Diagnosis of Mesenteric Ischemia." 
+            <em>Science Robotics</em>, 2025.<br>
+            <span style="font-size:0.9em; color:#555;">
+                <sup>†</sup>equal contribution;&nbsp;<sup>*</sup>corresponding author
+            </span>
+        </p>
+    </div>
+
+    <!-- footer -->
+    <nav class="proj-pager" aria-label="Project navigation">
+        <a class="pager-btn prev" href="aurora.html" aria-label="Previous project">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        </a>
+
+        <a class="pager-btn home" href="../index.html#projects" aria-label="Back to projects">
+        <i class="fas fa-house" aria-hidden="true"></i>
+        </a>
+
+        <a class="pager-btn next" href="gorilla.html" aria-label="Next project">
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </nav>

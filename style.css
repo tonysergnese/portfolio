@@ -1,0 +1,526 @@
+/* Basic Reset */
+*
+    
+
+    {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    p {
+    margin: 0 0 1rem 0;
+    }
+
+    /* Smooth scroll */
+    html {
+    scroll-behavior: smooth;
+    }
+  
+    :root {
+    --main-color: #ececec; /* Define your color once here */
+    --white:  #ffffff;
+    --nav: #252525;
+    --mw: 900px;
+    } 
+
+    body {
+    font-family: 'Roboto', sans-serif;
+            font-size: 0.8rem;
+    background: var(--white);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    }
+
+    .container {
+    width: 100%;
+    max-width: var(--mw);
+    margin: 0 auto;
+    padding: 0 1.5rem; /* matches header */
+    box-sizing: border-box;
+    }
+
+    /* ===== Header ===== */
+            header {
+            position: fixed;          /* stick to top */
+            top: 0;                   /* align with very top */
+            left: 0;
+            right: 0;
+            z-index: 1000;            /* keeps it above other content */
+            
+            display: flex;
+            justify-content: center; /* name on left, icons on right */
+
+            background-color: var(--main-color);
+            color: var(--nav);  /* title name color */
+            }
+
+            header .container {
+            padding: 0.8rem 1.5rem; /* 2nd term sets padding from left and right sides of the screen */
+            display: flex;
+            justify-content: space-between; /* name left, icons right */
+            align-items: center;
+            }
+
+            header h1 {
+            font-size: 1.5rem; /* my name at the top of the screen */
+            font-weight: 500; /* indicative of boldness */
+            margin: 0;
+        /* font-family: 'Inter', sans-serif; */
+            }
+
+            /* for <a> tag in header h1 */
+            header h1 a {
+            color: var(--nav);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            }
+
+            header h1 a:hover {
+            color: #60a5fa; /* your accent color */
+            }
+
+            header .icons {
+            display: flex;
+            gap: 17.5px; /* gap between icons */
+            }
+
+            header .icons a {
+            color: var(--nav);
+            font-size: 2rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            }
+
+            header .icons a:hover {
+            color: #60a5fa; /* hover accent color */
+            }
+
+    /* ===== About Me ===== */
+            #about {
+                max-width: var(--mw);
+                margin: 7.5rem auto 0rem; /* outside about */
+                padding: 0rem 0rem; /* within about, space from top, space horizontally */
+                align-items: center;
+            }
+
+            #about h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            /* text-align: center; */
+            }
+
+            .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+            }
+
+            .about-photo {
+            flex: 1 1 300px;
+            max-width: 300px;
+            border-radius: 8px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+            transition: filter 0.4s ease, box-shadow 0.3s ease;
+            width: 100%;              /* important: fills its flex column */
+            height: auto;
+            display: block;           /* removes inline gaps */
+            }
+
+            .about-text {
+            flex: 2 1 400px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            }
+
+            @media (max-width: 1000px) {
+                .about-photo {
+                    margin: 0 auto;   /* centers image horizontally */
+                    display: block;   /* ensure it behaves like a block */
+                }
+            }
+
+ 
+    /* ===== Divider ===== */           
+            .divider {
+            border: none;
+            border-top: 1px solid #ccc; /* color of the line */
+            margin: 2rem auto;          /* space above/below */
+            max-width: var(--mw);       /* keep it aligned with content */
+            }
+
+    /* ===== Projects ===== */     
+        #projects {
+        max-width: 1000px;
+        margin: 6rem auto; /* space above projects, helps to push project bubbles down from fixed header */
+        padding: 0 0;
+        }
+
+        #projects h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        }
+
+        .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* minimum width */
+        gap: 1.5rem;
+        }
+
+        /* Each grid item */
+        .grid-item {
+        text-align: center;
+        }
+
+        .grid-item a {
+        text-decoration: none;   /* removes underline */
+        color: inherit;          /* keeps your site’s text color */
+        }
+
+        .grid-item a:hover .title {
+        color: #60a5fa;          /* optional: change color on hover */
+        }
+
+        .img-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 100%;      /* makes height = width (square) */
+        overflow: hidden;
+        border-radius: 8px;  /* grid item corners */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .img-wrapper img {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;      /* crops the image to fill the square */
+        display: block;
+        transition: filter 0.4s ease;
+        /* border-top-left-radius: 8px;
+        border-top-right-radius: 8px; */
+        }
+
+        /* Overlay text */
+        .overlay {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 400;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none; /* allows clicking the image if needed */
+        }
+
+        /* Hover effect */
+        .img-wrapper:hover img {
+        filter: grayscale(100%) brightness(30%);
+        }
+        .img-wrapper:hover .overlay {
+        opacity: 1;
+        }
+
+        .title {
+        margin: 0;                     /* remove default h3 margins */
+        margin-top: -4px;              /* optional: closes small gap with image */
+        padding: 0.75rem 1rem;         /* space inside the rectangle */
+        background-color: var(--main-color);     /* light gray (Tailwind's gray-100) */
+        color: #111;                   /* text color */
+        font-size: 1.1rem;
+        font-weight:500;
+        text-align: center;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        }
+
+        .project-title {
+        max-width: var(--mw);
+        margin: 6rem auto 2rem;  /* push down from fixed header */
+        padding: 0 1.5rem;
+        text-align: center;
+        }
+
+        .project-title h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: .5rem;
+        }
+
+        .project-title .subtitle {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #555; /* softer contrast */
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.5;
+        }
+
+        /* Wrapper spacing (sits below your fixed header) */
+        .project-hero {
+        margin: 7.5rem auto 2rem;
+        /* padding: 0 1.5rem; */
+        max-width: var(--mw);
+        }
+
+        /* Two-column layout */
+        .hero-grid {
+        display: grid;
+        grid-template-columns: 0.75fr 1.25fr; /* image | text */
+        gap: 2rem;
+        align-items: center;
+        }
+
+        /* Image styling */
+        .hero-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,.12);
+        transition: filter .3s ease;
+        }
+        .hero-img:hover { filter: grayscale(100%) brightness(85%); }
+
+        /* Text column */
+        .hero-text { 
+            line-height: 1.7; 
+            font-size: 0.8rem;
+        }
+        .hero-title {
+        font-size: 1.25rem;
+        font-weight: 500;     /* bold title */
+        margin: 0 0 0;   /* only above the paragraph */
+        }
+
+        .hero-subtitle {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #555;        /* softer gray text */
+        margin: 0 0 1.2rem;
+        line-height: 1.5;
+        font-style: italic; /* italicize the whole line */
+        }
+
+        .hero-subtitle a {
+        color: inherit;        /* keeps the same gray tone */
+        text-decoration: none; /* removes underline */
+        }
+
+        .hero-subtitle a:hover {
+        color: #0b3454;        /* your accent color */
+        text-decoration: underline;
+        }
+
+        /* Responsive: stack on narrow screens */
+        @media (max-width: 900px) {
+        .hero-grid {
+            grid-template-columns: 1fr;    /* stack */
+        }
+        .hero-img {
+            max-width: 540px;              /* optional: limit big images */
+            margin: 0 auto;                /* center the image */
+        }
+        .hero-text { text-align: left; } /* keep copy left-aligned (or center if you prefer) */
+        }
+
+        .project-gallery {
+        margin: 2.5rem auto;
+        max-width: var(--mw);
+        padding: 0 0rem;
+        }
+
+        .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        }
+
+        .gallery-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .gallery-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        }
+
+        .caption {
+        margin-top: .75rem;
+        padding: .5rem 1rem;
+        background: #f3f4f6;               /* light gray bar */
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        font-size: 0.8rem;
+        text-align: center;
+        color: #111;
+        }
+
+        .gallery-video {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        display: block;
+        }
+
+        /* Force a consistent aspect ratio for both image + video */
+        .media-wrapper {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1/1;  /* choose ratio: 16:9, 4:3, 1:1 (square), etc. */
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        }
+
+        .media-wrapper img,
+        .media-wrapper video {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;  /* fill the box without stretching */
+        }
+
+        /* Responsive: stack on smaller screens */
+        @media (max-width: 768px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+        }
+
+        /* Portrait version (different aspect ratio) */
+        .media-wrapper-portrait {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 0.75 / 1;   /* Taller ratio */
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        }
+
+        .media-wrapper-portrait img,
+        .media-wrapper-portrait video {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+
+        /* Landscape version (different aspect ratio) */
+        .media-wrapper-landscape {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4 / 3;   /* Taller ratio */
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        }
+
+        .media-wrapper-landscape img,
+        .media-wrapper-landscape video {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+
+        /* Landscape version (different aspect ratio) */
+        .media-wrapper-landscape2 {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 5.25 / 3;   /* Taller ratio */
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        }
+
+        .media-wrapper-landscape2 img,
+        .media-wrapper-landscape2 video {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+
+        .media-wrapper-center {
+        max-width: 700px;   /* set how wide you want the image max */
+        margin: 0 auto;     /* centers the block inside container */
+        }
+
+        .media-wrapper-center img {
+        width: 100%;        /* scales within the wrapper */
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        display: block;
+        }
+
+        .charlie-video-section {
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+        }
+
+        .charlie-video-wrapper {
+            width: min(360px, 90vw);
+        }
+
+        .charlie-video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
+
+    /* ===== Footer ===== */  
+        .proj-pager {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr; /* left / center / right */
+        align-items: center;
+        gap: 1rem;
+        max-width: 250px;
+        margin: 3rem auto 2rem;
+        padding: 1rem 1.5rem;
+        border-top: 1px solid #ccc; /* subtle divider */
+        }
+
+        .pager-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .65rem 1rem;
+        border-radius: 9999px;           /* pill */
+        text-decoration: none;
+        color: inherit;
+        background: #f3f4f6;             /* light gray pill */
+        transition: background 0.2s ease, transform .1s ease;
+        }
+
+        .pager-btn:hover { background: #e5e7eb; }
+        .pager-btn:active { transform: translateY(1px); }
+
+        .pager-btn:focus-visible {
+        outline: 3px solid #60a5fa;
+        outline-offset: 3px;
+        }
+
+        .proj-pager .prev { justify-self: start; }
+        .proj-pager .home { justify-self: center; }
+        .proj-pager .next { justify-self: end; }
+
