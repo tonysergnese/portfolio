@@ -22,6 +22,7 @@
     --white:  #ffffff;
     --nav: #252525;
     --mw: 900px;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     } 
 
     body {
@@ -123,7 +124,7 @@
             flex: 1 1 300px;
             max-width: 300px;
             border-radius: 8px; 
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+            box-shadow: var(--card-shadow); 
             transition: filter 0.4s ease, box-shadow 0.3s ease;
             width: 100%;              /* important: fills its flex column */
             height: auto;
@@ -155,7 +156,7 @@
     /* ===== Projects ===== */     
         #projects {
         max-width: 1000px;
-        margin: 6rem auto; /* space above projects, helps to push project bubbles down from fixed header */
+        margin: 6rem auto 2.5rem auto; /* space above projects, helps to push project bubbles down from fixed header */
         padding: 0 0;
         }
 
@@ -191,7 +192,7 @@
         padding-top: 100%;      /* makes height = width (square) */
         overflow: hidden;
         border-radius: 8px;  /* grid item corners */
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: var(--card-shadow); 
         }
 
         .img-wrapper img {
@@ -283,7 +284,7 @@
         height: auto;
         display: block;
         border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0,0,0,.12);
+        box-shadow: var(--card-shadow);
         transition: filter .3s ease;
         }
         .hero-img:hover { filter: grayscale(100%) brightness(85%); }
@@ -352,7 +353,7 @@
         width: 100%;
         height: auto;
         border-radius: 8px;
-        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        box-shadow: var(--card-shadow);
         }
 
         .caption {
@@ -370,7 +371,7 @@
         width: 100%;
         height: auto;
         border-radius: 8px;
-        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        box-shadow: var(--card-shadow);
         display: block;
         }
 
@@ -381,7 +382,7 @@
         aspect-ratio: 1/1;  /* choose ratio: 16:9, 4:3, 1:1 (square), etc. */
         overflow: hidden;
         border-radius: 8px;
-        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        box-shadow: var(--card-shadow);
         }
 
         .media-wrapper img,
@@ -407,7 +408,7 @@
         aspect-ratio: 0.75 / 1;   /* Taller ratio */
         overflow: hidden;
         border-radius: 8px;
-        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        box-shadow: var(--card-shadow);
         }
 
         .media-wrapper-portrait img,
@@ -426,7 +427,7 @@
         aspect-ratio: 4 / 3;   /* Taller ratio */
         overflow: hidden;
         border-radius: 8px;
-        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        box-shadow: var(--card-shadow); 
         }
 
         .media-wrapper-landscape img,
@@ -445,7 +446,7 @@
         aspect-ratio: 5.25 / 3;   /* Taller ratio */
         overflow: hidden;
         border-radius: 8px;
-        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        box-shadow: var(--card-shadow);
         }
 
         .media-wrapper-landscape2 img,
@@ -466,7 +467,7 @@
         width: 100%;        /* scales within the wrapper */
         height: auto;
         border-radius: 8px;
-        box-shadow: 0 6px 16px rgba(0,0,0,.12);
+        box-shadow: var(--card-shadow);
         display: block;
         }
 
@@ -524,3 +525,38 @@
         .proj-pager .home { justify-self: center; }
         .proj-pager .next { justify-self: end; }
 
+        .bottom-nav {
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 0.85rem;
+        }
+
+        .bottom-nav a {
+        color: #555;
+        text-decoration: none;
+        font-weight: 200;
+        }
+
+        .bottom-nav a:hover {
+        text-decoration: underline;
+        }
+
+        .publication {
+            font-size: 0.9rem;
+            word-spacing: 0.1em;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .paper-title {
+            font-weight: 450;
+            color: #111;
+        }
+
+        .journal {
+            font-style: italic;
+            color: #666;
+        }
