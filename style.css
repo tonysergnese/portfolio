@@ -556,7 +556,7 @@
         }
 
         .publication {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             word-spacing: 0.1em;
             line-height: 1.8;
             color: #555;
@@ -569,7 +569,7 @@
             margin-top: 0.35rem;
             margin-bottom: 0.2rem;
             color: #555;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .paper-title a {
@@ -586,7 +586,7 @@
         .journal {
             font-style: italic;
             color: #555;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
         }
 
         .publication-list {
