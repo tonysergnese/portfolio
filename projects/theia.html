@@ -31,7 +31,7 @@
 
     <section class="project-hero">
         <div class="container hero-grid">
-            <img class="hero-img" src="../images/theia.png" alt="SPLASH capsule close-up">
+            <img class="hero-img" src="../images/theia.png" alt="FIREFLI capsule close-up">
 
             <div class="hero-text">
             <h2 class="hero-title">FIREFLI</h2>
@@ -43,9 +43,8 @@
             </p>
             <p>
                 FIREFLI is an ingestible, pill-sized device designed to activate in the small intestine and diagnose mesenteric ischemia. 
-                When I joined the project, baseline sensing and MCU circuitry had been established, however the system faced critical challenges. 
-                The MCU PCB was unable to communicate with the sensor PCB due to unreliable I²C lines, and no passive trigger mechanism existed to ensure the device powered on only in the small intestine. 
-                Reliable electronics and a targeted power switch were essential both for conserving battery life over the full intestinal transit time and for ensuring diagnostic accuracy.
+                During development, the system faced two critical engineering challenges: existing circuit boards communicated unreliably via I²C, and no mechanism existed to ensure the device powered on only in the small intestine. 
+                Addressing these issues was essential for conserving battery life over the full intestinal transit time and for ensuring diagnostic accuracy.
             </p>
             </div>
 
@@ -62,14 +61,13 @@
     <!-- paragraph 1 -->
     <div class="container">
         <p>
-        To address these issues, I first debugged the electronics system with an oscilloscope and logic analyzer, identifying a logic-level mismatch (2.1 V output vs. 1.8 V required) as the root cause of failed communication. 
-        I designed an intermediate level-shifting PCB using Altium Designer to slot between the sensing and MCU boards, which restored full function. 
+        I first debugged the electronics system, identifying a logic-level mismatch (2.1 V output vs. 1.8 V required) as the root cause of failed communication. 
+        I designed an intermediate level-shifting PCB using Altium Designer to slot between the existing circuit boards, which restored full system function. 
         In parallel, I developed a passive, pH-activated trigger by coating copper electrodes with Eudragit L100-55, a polymer that dissolves only in neutral intestinal fluid. 
-        This mechanism prevented premature activation in the stomach while reliably powering the device in the small intestine. 
+        This mechanism prevented premature capsule activation in the stomach while reliably powering the device in the small intestine. 
         With these solutions, I assembled four test devices that completed nine successful <em>in vivo</em> trials. 
         Using pilot trial data, I also wrote algorithms to average healthy versus ischemic signals and set diagnostic thresholds, achieving 90% diagnostic accuracy with 98% sensitivity and 85% specificity.
-        In addition to the engineering and experimental work, I contributed significantly to the dissemination of this research. 
-        I constructed the methods section of a manuscript describing FIREFLI’s design, validation, and <em>in vivo</em> testing. 
+        In addition to the engineering and experimental work, I constructed the methods section of a manuscript describing FIREFLI’s design, validation, and <em>in vivo</em> testing. 
         
         </p>
     </div>
@@ -88,7 +86,7 @@
         <!-- Portrait block (3:4) -->
         <figure class="gallery-item">
             <div class="media-wrapper-landscape">
-            <img src="../images/eu.png" alt="Vertical view">
+            <img src="../images/eu.png" alt="pH Activation Mechanism">
             </div>
             <!-- <figcaption class="caption">pH Activation Mechanism</figcaption> -->
         </figure>
